@@ -1,0 +1,6 @@
+base_configs was created on Independence at 2026-11-18 09:26 JST with
+  python seed_experiment.py make-base --repo C:\Users\ando\CDSM
+seed_experiment.py SHA256 837b0d7c494222e4e4b637498cb337d570cdc7b2b1fd6ee300dac7ff0a4c8096.
+CDSM code: copy of Box\大学院2024\CovarianceMatrixDiffusion\CDSM (src\, snapshot ~2026-10-24; identical scripts to GitHub KudanLabo/CDSM main for the dataset scripts checked).
+Validated datasets (DCC-GARCH test split matches Table II): ..\datasets\<name>\ (see README.txt in each).
+Diligence/Audacity: no need to run make-base again; if you do, it overwrites these files with the same content for the same code.

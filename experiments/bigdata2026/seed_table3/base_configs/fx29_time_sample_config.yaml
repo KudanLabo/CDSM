@@ -1,0 +1,97 @@
+scheduler:
+  _target_: cfdiff.utils.sde.VEScheduler
+  sigma_min: 0.0005
+  sigma_max: 0.5
+  fourier_noise_scaling: false
+  eps: 1.0e-05
+  temporal_noise_ramp: null
+  temporal_ramp_max: 1.0
+random_seed: 42
+run_mode: sample
+checkpoint_path: null
+output_dir: null
+callbacks:
+  epoch_metrics:
+    enabled: true
+    compute_fourier: true
+    num_mc_samples: 5
+    save_mc_artifacts: false
+    max_batches: 999
+    max_windows: 999
+    log_prefix: epoch
+    sampler:
+      num_diffusion_steps: 1000
+      sample_batch_size: 64
+    best_metrics: '@C:/Users/ando/CDSM/src/cfdiff/configs/callbacks/best_metrics_full.yaml'
+    best_metric: matrix_cov_fro
+    best_metric_mode: min
+    best_metric_filename: best-matrix_cov_fro
+    best_metric_save_last: true
+datamodule:
+  _target_: cfdiff.dataloaders.conditional_gluonts.ConditionalGluonTSJsonDatamodule
+  data_dir: ~/.gluonts/datasets/fx30_ecb
+  batch_size: 32
+  context_len: 45
+  pred_len: 15
+  stride: 1
+  val_ratio: 0.3
+  train_val_gap: -1
+  val_test_gap: -1
+  standardize: true
+  num_workers: 0
+  pin_memory: false
+  jsonl_train: null
+  jsonl_test: null
+  fourier_transform: false
+  estimate_sliding_cov: true
+  sliding_cov_window: 8
+  sliding_cov_eps: 1.0e-06
+  align_tail_windows: true
+  nan_policy: ffill
+  add_missing_mask: false
+  ffill_warm_start: false
+model:
+  _target_: cfdiff.models.score_model.ScoreModel
+  _partial_: true
+  n_channels: null
+  sequence_len: null
+  pred_len: null
+  pred_len_time: null
+  context_len_time: null
+  target_channels: null
+  noise_scheduler: ${scheduler}
+  d_model: 192
+  num_layers: 6
+  n_head: 8
+  dropout: 0.0
+  lr: 0.0005
+  weight_decay: 0.0
+  lr_scheduler_type: cosine_warmup
+  lr_scheduler_kwargs:
+    interval: step
+  likelihood_weighting: false
+  t_sampling_mode: beta
+  t_beta_alpha: 2.0
+  t_beta_beta: 5.0
+  t_power_gamma: 2.0
+  t_importance_correction: true
+  lambda_mean: 0
+  lambda_cov: 0
+  lambda_corr: 0
+  lambda_spectral: 0
+  lambda_sliding_cov: 0
+  use_asset_encoder: true
+  backbone: transformer
+  mlp_hidden_dim: 512
+trainer:
+  _target_: pytorch_lightning.Trainer
+  max_epochs: 80
+  accelerator: auto
+  enable_progress_bar: true
+sampler:
+  sample_batch_size: 64
+  num_diffusion_steps: 1000
+  sample_repeats: 5
+  num_mc_samples: 5
+  save_mc_artifacts: true
+name: time
