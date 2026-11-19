@@ -101,3 +101,6 @@ assets/  # plotted figures
 ```
 
 Set `CFDIFF_DATA_DIR` and use the commands above to reproduce the results.
+
+## Revision experiments (BigData 2026)
+Additional experiments for the paper revision (Table III seed study, DCC-GARCH long-window baseline) are in `experiments/bigdata2026/`; see its README.

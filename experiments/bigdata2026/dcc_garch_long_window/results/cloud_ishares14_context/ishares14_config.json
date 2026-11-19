@@ -1,0 +1,24 @@
+{
+  "dir": "ishares14_clean",
+  "context_len": 30,
+  "pred_len": 15,
+  "val_ratio": 0.3,
+  "data_dir": "/tmp/claude-0/ds/ishares14_clean",
+  "lookbacks": [
+    "context",
+    "250",
+    "500",
+    "expanding"
+  ],
+  "estimate_ab": [
+    false,
+    true
+  ],
+  "test_windows": 74,
+  "first_window": {
+    "index": 0,
+    "end_ctx": 971,
+    "target_start": 971,
+    "target_end": 986
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "exchange_time": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  },
+  "exchange_fourier": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  },
+  "fx29_time": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  },
+  "fx29_fourier": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  },
+  "industry_time": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  },
+  "industry_fourier": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  },
+  "ishares_time": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  },
+  "ishares_fourier": {
+    "run_dir": null,
+    "ckpt_name": "checkpoints/best-matrix_corr_fro.ckpt",
+    "batch": null,
+    "source": "paper.ipynb overrides with lambda=0 (make-base)"
+  }
+}
